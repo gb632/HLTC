@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gb632.github.io/sitemap.xml
