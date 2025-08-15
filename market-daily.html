@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Market Daily – HLTC</title>
+  <!-- Styles aus deinem Repo -->
+  <link rel="stylesheet" href="assets/main.css" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <meta name="description" content="Kostenloser Finanz-Überblick: Trending-Ticker, technische Indikatoren (RSI/MACD), Analysten-Trends & AI-Briefing. Keine Anlageberatung." />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">📈 Market Daily <span class="beta">Prototype</span></div>
+    <nav class="nav">
+      <a href="/">Start</a>
+      <a href="#today">Heute</a>
+      <a href="#strong-buys">Strong Buy</a>
+      <a href="#technicals">Technik</a>
+      <a href="#news-ai">AI-Briefing</a>
+      <a href="#settings">Einstellungen</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HEUTE -->
+    <section id="today" class="card">
+      <h2>Heute im Blick</h2>
+      <div class="row">
+        <div class="col">
+          <h3>Trending Ticker (US/DE)</h3>
+          <div id="trending" class="grid"></div>
+        </div>
+        <div class="col">
+          <h3>Bewegung heute</h3>
+          <div id="gainers" class="mini-list"></div>
+          <div id="losers" class="mini-list"></div>
+        </div>
+      </div>
+      <p class="disclaimer">
+        Hinweis: Öffentliche, kostenlose Datenquellen (Yahoo-Finance-Endpunkte). Angaben ohne Gewähr. Keine Anlageberatung.
+      </p>
+    </section>
+
+    <!-- STRONG BUY -->
+    <section id="strong-buys" class="card">
+      <h2>Starke Analysten-Einstufungen (heuristisch)</h2>
+      <p>Wir lesen für eine kleine Auswahl populärer Ticker den <em>recommendationTrend</em> von Yahoo Finance und sortieren nach hohem „Strong Buy“-Anteil (indikativ).</p>
+      <button id="scan-strong-buys" class="btn">Kandidaten scannen</button>
+      <div id="strong-buy-results" class="grid"></div>
+    </section>
+
+    <!-- TECHNICALS -->
+    <section id="technicals" class="card">
+      <h2>Technische Analyse – RSI & MACD</h2>
+      <div class="tech-form">
+        <input id="symbol-input" placeholder="z. B. AAPL, NVDA, SAP.DE" />
+        <button id="analyze-btn" class="btn">Analysieren</button>
+      </div>
+      <div id="ta-output"></div>
+      <div id="chart-container"><div id="tradingview-widget"></div></div>
+    </section>
+
+    <!-- AI BRIEFING -->
+    <section id="news-ai" class="card">
+      <h2>Tägliches AI-Briefing</h2>
+      <p>Schlagzeilen/Ereignisse eingeben (z. B. „Treffen Trump & Putin“, „EZB-Zinsentscheid“). Mit deinem OpenAI-API-Key (nur lokal gespeichert) erzeugen wir eine kompakte, <strong>nicht-bindende</strong> Einordnung.</p>
+      <textarea id="news-input" rows="5" placeholder="Heute relevant: ..."></textarea>
+      <div class="row">
+        <button id="generate-briefing" class="btn">Briefing generieren (OpenAI)</button>
+        <button id="copy-prompts" class="btn secondary">Prompts kopieren</button>
+      </div>
+      <pre id="briefing-output" class="mono"></pre>
+      <details>
+        <summary>Prompt-Vorlagen anzeigen</summary>
+        <div id="prompt-templates"></div>
+      </details>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="settings" class="card">
+      <h2>Einstellungen</h2>
+      <label class="label">
+        OpenAI API Key (optional, wird nur lokal im Browser gespeichert)
+        <input id="openai-key" type="password" placeholder="sk-..." />
+      </label>
+      <label class="label">
+        Region für Trending (US, DE, GB)
+        <input id="region" placeholder="US" />
+      </label>
+      <button id="save-settings" class="btn">Speichern</button>
+      <p id="settings-status" class="muted"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      © 2025 HLTC · <strong>Keine Anlageberatung im Sinne des §85 WpHG.</strong>
+      Informationen dienen ausschließlich zu Informationszwecken und sind keine Empfehlung zum Kauf/Verkauf von Finanzinstrumenten.
+      Angaben ohne Gewähr. Datenquelle: öffentliche Yahoo-Finance-Endpunkte.
+    </div>
+  </footer>
+
+  <!-- Skripte aus deinem Repo -->
+  <script src="assets/prompts.js"></script>
+  <script src="assets/app.js"></script>
+  <!-- TradingView Widget -->
+  <script src="https://s3.tradingview.com/tv.js"></script>
+</body>
+</html>
