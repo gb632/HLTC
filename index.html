@@ -3,56 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HLTC – Analytik & Markt-Insights</title>
+  <title>HLTC – Honolulu Trading Company</title>
   <meta name="description" content="HLTC: Unabhängige, analytische Markt-Insights. Keine Anlageberatung.">
   <link rel="stylesheet" href="assets/main.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="container nav">
-    <div class="logo">📊 HLTC</div>
-    <nav>
-      <a href="#about">Über uns</a>
-      <a href="#services">Leistungen</a>
-      <a href="market-daily.html">Market Daily</a>
-      <a href="impressum.html">Impressum</a>
-    </nav>
+<header class="wrap header">
+  <div class="brand">
+    <!-- Tausche das src später durch dein Logo aus -->
+    <img src="assets/logo.png" alt="HLTC" class="logo">
+    <span>HONOLULU TRADING COMPANY</span>
   </div>
+  <nav class="nav">
+    <a href="#about">Über uns</a>
+    <a href="market-daily.html">Market Daily</a>
+    <a href="impressum.html">Impressum</a>
+  </nav>
 </header>
 
-<section class="hero">
-  <div class="container">
+<main class="wrap">
+  <section class="hero">
     <h1>Investitionen verstehen – Chancen erkennen</h1>
-    <p>Modernes Research, klare Aufbereitung, 100 % transparent. <strong>Keine Anlageberatung.</strong></p>
-    <p>
-      <a class="btn" href="market-daily.html">🚀 Market Daily öffnen</a>
-      <a class="btn ghost" href="#services">Leistungen ansehen</a>
-    </p>
-  </div>
-</section>
+    <p>Modernes Research, klare Aufbereitung, 100 % transparent. <strong>Keine Anlageberatung.</strong></p>
+    <div class="actions">
+      <a class="btn" href="market-daily.html">Market Daily öffnen</a>
+      <a class="btn ghost" href="#about">Mehr erfahren</a>
+    </div>
+  </section>
 
-<main class="container">
-  <section id="about" class="card">
+  <section id="about" class="section">
     <h2>Über uns</h2>
-    <p>HLTC bündelt öffentlich verfügbare Marktdaten und bereitet sie verständlich auf – werbefinanziert & kostenlos.</p>
+    <p>HLTC bündelt öffentlich verfügbare Marktdaten (Trends, Analysten, Technik) und
+       bereitet sie verständlich auf – werbefinanziert & kostenlos.</p>
+    <ul class="bullet">
+      <li><strong>Banken-Trends:</strong> meist gekaufte/handelte Titel (Proxy), tagesnah.</li>
+      <li><strong>Analysten-Radar:</strong> Konsens inkl. Strong-Buy-Quote.</li>
+      <li><strong>Technik:</strong> RSI(14), MACD(12/26/9), Put/Call (^CPC).</li>
+      <li><strong>Ereignis-Monitor:</strong> politische/ökonomische News mit Impact-Score.</li>
+    </ul>
   </section>
 
-  <section id="services" class="grid">
-    <div class="card"><h3>Täglicher Marktüberblick</h3><p>Trending, Gewinner/Verlierer, Technik & Analysten – kompakt in <a href="market-daily.html">Market Daily</a>.</p></div>
-    <div class="card"><h3>Technische Indikatoren</h3><p>RSI und MACD live im Browser.</p></div>
-    <div class="card"><h3>AI‑Briefing</h3><p>Knappe Einordnung aktueller Ereignisse (optional mit eigenem OpenAI‑Key).</p></div>
-  </section>
-
-  <section class="card legal">
-    <h2>Wichtiger Hinweis</h2>
-    <p><strong>Keine Anlageberatung im Sinne des § 85 WpHG.</strong> Alle Inhalte dienen nur Informationszwecken. Angaben ohne Gewähr.</p>
+  <section class="section note">
+    <h3>Rechtlicher Hinweis</h3>
+    <p><strong>Keine Anlageberatung im Sinne des § 85 WpHG.</strong> Alle Inhalte dienen nur
+       Informationszwecken. Angaben ohne Gewähr. Daten können unvollständig/verspätet sein.</p>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="fineprint">© 2025 HLTC · Keine Anlageberatung · Daten: öffentliche Quellen</div>
-  </div>
-</footer>
+<footer class="wrap footer">© 2025 HLTC · White on Black</footer>
 </body>
 </html>
